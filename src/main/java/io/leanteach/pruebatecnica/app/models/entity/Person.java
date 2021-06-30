@@ -1,27 +1,51 @@
 package io.leanteach.pruebatecnica.app.models.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
-import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name="candidate")
-public class Person implements Serializable {
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+public class Person {
 
-    private static final long serialVersionUID= 1L;
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
+
+    @OneToOne(fetch = FetchType.LAZY,
+            cascade =  CascadeType.ALL,
+            mappedBy = "person")
+    private Employee employee;
+
     private String name;
     private String lastName;
     private String address;
     private String cellphone;
     private String cityName;
 
-
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
+    public Person(Long id, Employee employee, String name, String lastName, String address, String cellphone, String cityName) {
+        this.id = id;
+        this.employee = employee;
+        this.name = name;
+        this.lastName = lastName;
+        this.address = address;
+        this.cellphone = cellphone;
+        this.cityName = cityName;
     }
+
+    public Person(Long id,  String name, String lastName, String address, String cellphone, String cityName) {
+        this.id = id;
+        this.name = name;
+        this.lastName = lastName;
+        this.address = address;
+        this.cellphone = cellphone;
+        this.cityName = cityName;
+    }
+
+
 
     public Long getId() {
         return id;

@@ -1,9 +1,11 @@
 package io.leanteach.pruebatecnica.app.models.dao;
 
 import io.leanteach.pruebatecnica.app.models.entity.Person;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public class PersonDaoImpl implements IPersonDao {
 
     @Override
