@@ -45,7 +45,8 @@ public class Person {
         this.cityName = cityName;
     }
 
-
+    public Person() {
+    }
 
     public Long getId() {
         return id;

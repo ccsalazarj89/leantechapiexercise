@@ -55,6 +55,9 @@ public class Employee {
         this.salary = salary;
     }
 
+    public Employee() {
+    }
+
     public Double getSalary() {
         return salary;
     }

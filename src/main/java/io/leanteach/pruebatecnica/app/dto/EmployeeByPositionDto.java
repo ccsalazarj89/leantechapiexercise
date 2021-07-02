@@ -7,7 +7,7 @@ import java.util.List;
 
 public class EmployeeByPositionDto {
 
-        private String name;
+        private String positionName;
         private Long employeeId;
         private Double salary;
         private Long personId;
@@ -15,24 +15,33 @@ public class EmployeeByPositionDto {
         private String personName;
         private String personLastName;
         private String address;
-        private String city_name;
+        private String cityName;
+        private String cellPhone;
 
-    public String getCity_name() {
-        return city_name;
+    public EmployeeByPositionDto() {
     }
 
-    public void setCity_name(String city_name) {
-        this.city_name = city_name;
+    public EmployeeByPositionDto(String positionName, Long employeeId, Double salary,
+                                 Long personId, Long positionId, String personName,
+                                 String personLastName, String address, String cityName, String cellPhone) {
+        this.positionName = positionName;
+        this.employeeId = employeeId;
+        this.salary = salary;
+        this.personId = personId;
+        this.positionId = positionId;
+        this.personName = personName;
+        this.personLastName = personLastName;
+        this.address = address;
+        this.cityName = cityName;
+        this.cellPhone = cellPhone;
     }
 
-    private String cellphone;
-
-    public String getName() {
-        return name;
+    public String getPositionName() {
+        return positionName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setPositionName(String positionName) {
+        this.positionName = positionName;
     }
 
     public Long getEmployeeId() {
@@ -91,11 +100,19 @@ public class EmployeeByPositionDto {
         this.address = address;
     }
 
-    public String getCellphone() {
-        return cellphone;
+    public String getCityName() {
+        return cityName;
     }
 
-    public void setCellphone(String cellphone) {
-        this.cellphone = cellphone;
+    public void setCityName(String cityName) {
+        this.cityName = cityName;
+    }
+
+    public String getCellPhone() {
+        return cellPhone;
+    }
+
+    public void setCellPhone(String cellPhone) {
+        this.cellPhone = cellPhone;
     }
 }
