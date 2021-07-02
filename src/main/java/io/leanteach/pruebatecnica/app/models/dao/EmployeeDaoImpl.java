@@ -5,7 +5,6 @@ import io.leanteach.pruebatecnica.app.dto.UpdateEmployeeDto;
 import io.leanteach.pruebatecnica.app.models.entity.Employee;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
-import org.hibernate.sql.Update;
 import org.hibernate.transform.Transformers;
 import org.hibernate.type.DoubleType;
 import org.hibernate.type.LongType;
@@ -15,7 +14,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import java.awt.geom.Arc2D;
 import java.util.List;
 
 @Repository

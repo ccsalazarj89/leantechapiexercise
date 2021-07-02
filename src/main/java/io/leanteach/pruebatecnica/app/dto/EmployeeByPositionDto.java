@@ -1,9 +1,5 @@
 package io.leanteach.pruebatecnica.app.dto;
 
-import io.leanteach.pruebatecnica.app.models.entity.Employee;
-import io.leanteach.pruebatecnica.app.models.entity.Position;
-
-import java.util.List;
 
 public class EmployeeByPositionDto {
 
