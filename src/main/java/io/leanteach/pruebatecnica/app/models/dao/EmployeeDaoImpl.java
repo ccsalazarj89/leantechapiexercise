@@ -10,7 +10,7 @@ import org.hibernate.type.DoubleType;
 import org.hibernate.type.LongType;
 import org.hibernate.type.StringType;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
+
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -23,7 +23,6 @@ public class EmployeeDaoImpl implements IEmployeeDao {
     private EntityManager em;
 
     @Override
-    @Transactional
     public Long save(Employee employee) {
 
         Session currentSession = em.unwrap(Session.class);
@@ -35,7 +34,6 @@ public class EmployeeDaoImpl implements IEmployeeDao {
 
     @Override
     @SuppressWarnings("unchecked")
-    @Transactional(readOnly=true)
     public List<Employee> findAll(String name, String position) {
 
         Session currentSession = em.unwrap(Session.class);
@@ -61,7 +59,6 @@ public class EmployeeDaoImpl implements IEmployeeDao {
     }
 
     @Override
-    @Transactional
     public void delete(Long id) {
 
         Session currentSession = em.unwrap(Session.class);
@@ -72,7 +69,6 @@ public class EmployeeDaoImpl implements IEmployeeDao {
     }
 
     @Override
-    @Transactional
     public void update(UpdateEmployeeDto updateEmployeeDto) {
 
         Session currentSession = em.unwrap(Session.class);
